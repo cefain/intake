@@ -22,425 +22,91 @@
     --radius: 8px;
     --radius-lg: 12px;
   }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    font-family: 'Montserrat', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    min-height: 100vh;
-    padding: 0;
-  }
-
-  .page-header {
-    background: var(--navy);
-    padding: 24px 40px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-
-  .logo-mark {
-    background: var(--yellow);
-    color: var(--navy);
-    font-weight: 700;
-    font-size: 13px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 8px 14px;
-    border-radius: 4px;
-    white-space: nowrap;
-  }
-
+  body { font-family: 'Montserrat', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+  .page-header { background: var(--navy); padding: 24px 40px; display: flex; align-items: center; gap: 16px; }
+  .logo-mark { background: var(--yellow); color: var(--navy); font-weight: 700; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; padding: 8px 14px; border-radius: 4px; white-space: nowrap; }
   .header-text { color: var(--white); }
   .header-text h1 { font-size: 16px; font-weight: 600; letter-spacing: 0.04em; }
   .header-text p { font-size: 12px; color: var(--light); margin-top: 3px; font-weight: 400; }
-
-  .page-body {
-    max-width: 740px;
-    margin: 0 auto;
-    padding: 40px 24px 80px;
-  }
-
-  .intro {
-    margin-bottom: 32px;
-    padding-bottom: 24px;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .intro p {
-    font-family: 'Lora', serif;
-    font-style: italic;
-    font-size: 15px;
-    color: var(--text-muted);
-    line-height: 1.7;
-  }
-
-  .section {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 24px;
-    margin-bottom: 20px;
-  }
-
-  .section-title {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--mustard);
-    margin-bottom: 18px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .section-title::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--border);
-  }
-
+  .page-body { max-width: 740px; margin: 0 auto; padding: 40px 24px 100px; }
+  .intro { margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+  .intro p { font-family: 'Lora', serif; font-style: italic; font-size: 15px; color: var(--text-muted); line-height: 1.7; }
+  .section { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; margin-bottom: 20px; }
+  .section-title { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mustard); margin-bottom: 18px; display: flex; align-items: center; gap: 8px; }
+  .section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
   .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .grid-1 { display: grid; gap: 16px; }
   .span2 { grid-column: 1 / -1; }
-
   .field { display: flex; flex-direction: column; gap: 6px; }
-
-  label {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-  }
-
-  input, textarea, select {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    padding: 10px 12px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    background: var(--white);
-    color: var(--text);
-    width: 100%;
-    transition: border-color 0.15s, box-shadow 0.15s;
-    appearance: none;
-    -webkit-appearance: none;
-  }
-
-  input:focus, textarea:focus, select:focus {
-    outline: none;
-    border-color: var(--border-focus);
-    box-shadow: 0 0 0 3px rgba(206,153,6,0.12);
-  }
-
+  label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); }
+  input, textarea, select { font-family: 'Montserrat', sans-serif; font-size: 14px; padding: 10px 12px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--white); color: var(--text); width: 100%; transition: border-color 0.15s, box-shadow 0.15s; appearance: none; -webkit-appearance: none; }
+  input:focus, textarea:focus, select:focus { outline: none; border-color: var(--border-focus); box-shadow: 0 0 0 3px rgba(206,153,6,0.12); }
   input::placeholder, textarea::placeholder { color: var(--light); }
-
   textarea { resize: vertical; line-height: 1.6; }
   textarea.bio { min-height: 110px; }
   textarea.desc { min-height: 90px; }
-
-  select {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2394908d' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 12px center;
-    padding-right: 32px;
-    cursor: pointer;
-  }
-
-  .hint {
-    font-size: 11px;
-    color: var(--text-muted);
-    line-height: 1.5;
-  }
-
-  .char-count {
-    font-size: 11px;
-    color: var(--light);
-    text-align: right;
-  }
-
+  select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2394908d' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 32px; cursor: pointer; }
+  .hint { font-size: 11px; color: var(--text-muted); line-height: 1.5; }
+  .char-count { font-size: 11px; color: var(--light); text-align: right; }
   .price-wrap { position: relative; }
   .price-wrap input { padding-left: 28px; }
-  .currency {
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 13px;
-    color: var(--text-muted);
-    pointer-events: none;
-    font-weight: 500;
-  }
-
-  .drive-section {
-    background: #fafaf7;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 20px 24px;
-    margin-bottom: 20px;
-  }
-
-  .drive-input-row {
-    display: flex;
-    gap: 10px;
-    align-items: flex-end;
-    margin-top: 12px;
-  }
-
+  .currency { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); font-size: 13px; color: var(--text-muted); pointer-events: none; font-weight: 500; }
+  .drive-section { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; margin-bottom: 20px; }
+  .drive-input-row { display: flex; gap: 10px; align-items: flex-end; margin-top: 12px; }
   .drive-input-row input { flex: 1; }
-
-  .btn-apply {
-    padding: 10px 18px;
-    background: var(--navy);
-    color: var(--white);
-    border: none;
-    border-radius: var(--radius);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: background 0.15s;
-  }
-
+  .btn-apply { padding: 10px 18px; background: var(--navy); color: var(--white); border: none; border-radius: var(--radius); font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; white-space: nowrap; transition: background 0.15s; }
   .btn-apply:hover { background: #1a1e27; }
-
-  .products-heading {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 16px;
-  }
-
-  .products-heading h2 {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--mustard);
-  }
-
-  .product-count {
-    font-size: 12px;
-    color: var(--text-muted);
-    font-weight: 500;
-  }
-
+  .products-heading { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+  .products-heading h2 { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mustard); }
+  .product-summary { font-size: 12px; color: var(--text-muted); font-weight: 500; }
   .product-list { display: flex; flex-direction: column; gap: 16px; margin-bottom: 20px; }
-
-  .product-card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    transition: border-color 0.15s;
-  }
-
+  .product-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; transition: border-color 0.15s; }
   .product-card:focus-within { border-color: var(--mustard); }
-
-  .product-card-header {
-    background: var(--navy);
-    padding: 11px 18px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .product-label {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--yellow);
-  }
-
-  .btn-remove {
-    background: none;
-    border: 1px solid rgba(255,255,255,0.2);
-    color: rgba(255,255,255,0.6);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    padding: 4px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.15s;
-  }
-
-  .btn-remove:hover {
-    border-color: rgba(255,255,255,0.5);
-    color: var(--white);
-  }
-
+  .product-card-header { background: var(--navy); padding: 11px 18px; display: flex; align-items: center; justify-content: space-between; }
+  .product-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--yellow); }
+  .btn-remove { background: none; border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.6); font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 10px; border-radius: 4px; cursor: pointer; transition: all 0.15s; }
+  .btn-remove:hover { border-color: rgba(255,255,255,0.5); color: var(--white); }
   .product-body { padding: 20px; display: grid; gap: 16px; }
-
-  .drive-link-box {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 14px;
-    background: #f0f7ef;
-    border: 1px solid #c0ddb8;
-    border-radius: var(--radius);
-  }
-
-  .drive-icon {
-    width: 18px;
-    height: 18px;
-    flex-shrink: 0;
-    color: #27500A;
-  }
-
+  .drive-link-box { display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: #f0f7ef; border: 1px solid #c0ddb8; border-radius: var(--radius); }
   .drive-link-box span { font-size: 13px; color: #3B6D11; flex: 1; }
-
-  .drive-link-box a {
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--navy);
-    text-decoration: none;
-    background: var(--yellow);
-    padding: 5px 12px;
-    border-radius: 4px;
-    white-space: nowrap;
-    transition: background 0.15s;
-  }
-
+  .drive-link-box a { font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--navy); text-decoration: none; background: var(--yellow); padding: 5px 12px; border-radius: 4px; white-space: nowrap; transition: background 0.15s; }
   .drive-link-box a:hover { background: var(--mustard); color: var(--white); }
-
-  .drive-empty-box {
-    padding: 10px 14px;
-    background: #faf9f6;
-    border: 1px dashed var(--border);
-    border-radius: var(--radius);
-    font-size: 13px;
-    color: var(--text-muted);
-    font-style: italic;
-  }
-
-  .photo-hint {
-    font-size: 11px;
-    color: var(--text-muted);
-    line-height: 1.6;
-    margin-top: 6px;
-  }
-
-  .photo-hint code {
-    background: #f0ede8;
-    padding: 1px 5px;
-    border-radius: 3px;
-    font-family: monospace;
-    font-size: 11px;
-    color: var(--navy);
-  }
-
-  .bottom-bar {
-    position: sticky;
-    bottom: 0;
-    background: var(--white);
-    border-top: 1px solid var(--border);
-    padding: 16px 24px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin: 0 -24px;
-    z-index: 10;
-  }
-
-  .btn-add-product {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 11px 20px;
-    background: none;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--text);
-    cursor: pointer;
-    transition: all 0.15s;
-  }
-
-  .btn-add-product:hover {
-    border-color: var(--navy);
-    background: var(--navy);
-    color: var(--white);
-  }
-
+  .drive-empty-box { padding: 10px 14px; background: #faf9f6; border: 1px dashed var(--border); border-radius: var(--radius); font-size: 13px; color: var(--text-muted); font-style: italic; }
+  .photo-hint { font-size: 11px; color: var(--text-muted); line-height: 1.6; margin-top: 6px; }
+  .photo-hint code { background: #f0ede8; padding: 1px 5px; border-radius: 3px; font-family: monospace; font-size: 11px; color: var(--navy); }
+  .bottom-bar { position: sticky; bottom: 0; background: var(--white); border-top: 1px solid var(--border); padding: 16px 24px; display: flex; align-items: center; gap: 12px; margin: 0 -24px; z-index: 10; }
+  .btn-add-product { display: flex; align-items: center; gap: 8px; padding: 11px 20px; background: none; border: 1px solid var(--border); border-radius: var(--radius); font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text); cursor: pointer; transition: all 0.15s; }
+  .btn-add-product:hover { border-color: var(--navy); background: var(--navy); color: var(--white); }
   .btn-add-product svg { width: 14px; height: 14px; }
-
   .spacer { flex: 1; }
-
-  .product-summary {
-    font-size: 12px;
-    color: var(--text-muted);
-    font-weight: 500;
-  }
-
-  .btn-download {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 11px 24px;
-    background: var(--yellow);
-    border: none;
-    border-radius: var(--radius);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--navy);
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-
-  .btn-download:hover { background: var(--mustard); color: var(--white); }
-  .btn-download svg { width: 14px; height: 14px; }
-
-  .toast {
-    position: fixed;
-    bottom: 80px;
-    right: 24px;
-    background: var(--navy);
-    color: var(--white);
-    padding: 12px 20px;
-    border-radius: var(--radius);
-    font-size: 13px;
-    font-weight: 500;
-    transform: translateY(20px);
-    opacity: 0;
-    transition: all 0.25s;
-    z-index: 100;
-    pointer-events: none;
-  }
-
-  .toast.show { transform: translateY(0); opacity: 1; }
-
+  .btn-submit { display: flex; align-items: center; gap: 8px; padding: 11px 28px; background: var(--yellow); border: none; border-radius: var(--radius); font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--navy); cursor: pointer; transition: background 0.15s; }
+  .btn-submit:hover { background: var(--mustard); color: var(--white); }
+  .btn-submit:disabled { background: var(--light); color: var(--white); cursor: not-allowed; }
+  .btn-submit svg { width: 14px; height: 14px; }
   .required-star { color: var(--mustard); margin-left: 2px; }
+  .error-msg { font-size: 12px; color: #A32D2D; margin-top: 4px; display: none; }
+  .field.has-error input, .field.has-error textarea, .field.has-error select { border-color: #E24B4A; }
+  .field.has-error .error-msg { display: block; }
+
+  /* Success screen */
+  .success-screen { display: none; max-width: 740px; margin: 80px auto; padding: 0 24px; text-align: center; }
+  .success-screen.visible { display: block; }
+  .success-icon { width: 64px; height: 64px; background: var(--yellow); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; }
+  .success-icon svg { width: 28px; height: 28px; color: var(--navy); }
+  .success-screen h2 { font-size: 22px; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
+  .success-screen p { font-family: 'Lora', serif; font-style: italic; font-size: 15px; color: var(--text-muted); line-height: 1.7; max-width: 480px; margin: 0 auto; }
+
+  /* Submitting state */
+  .spinner { display: inline-block; width: 14px; height: 14px; border: 2px solid rgba(37,41,53,0.3); border-top-color: var(--navy); border-radius: 50%; animation: spin 0.7s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
 
   @media (max-width: 560px) {
     .page-header { padding: 18px 20px; }
-    .page-body { padding: 24px 16px 80px; }
+    .page-body { padding: 24px 16px 100px; }
     .grid-2 { grid-template-columns: 1fr; }
     .span2 { grid-column: 1; }
     .bottom-bar { margin: 0 -16px; padding: 12px 16px; }
     .drive-input-row { flex-direction: column; }
-    .drive-input-row input { width: 100%; }
   }
 </style>
 </head>
@@ -454,88 +120,106 @@
   </div>
 </header>
 
-<div class="page-body">
+<!-- FORM VIEW -->
+<div id="form-view">
+  <div class="page-body">
+    <div class="intro">
+      <p>Welcome to Ce Fain! Fill out this form with your designer profile and the products you'd like listed on the platform. When everything looks good, hit Submit — we'll take it from there.</p>
+    </div>
 
-  <div class="intro">
-    <p>Welcome to Ce Fain! Fill out this form with your designer profile and the products you'd like listed on the platform. When you're done, click "Download CSV" and email the file to <strong>howcool@cefain.com</strong>.</p>
-  </div>
-
-  <div class="section">
-    <div class="section-title">About you</div>
-    <div class="grid-2">
-      <div class="field">
-        <label for="d-name">Designer / brand name <span class="required-star">*</span></label>
-        <input type="text" id="d-name" placeholder="e.g. Wagner Arte" required>
-      </div>
-      <div class="field">
-        <label for="d-email">Contact email <span class="required-star">*</span></label>
-        <input type="email" id="d-email" placeholder="you@studio.ro" required>
-      </div>
-      <div class="field">
-        <label for="d-instagram">Instagram handle</label>
-        <input type="text" id="d-instagram" placeholder="@yourstudio">
-      </div>
-      <div class="field">
-        <label for="d-website">Website</label>
-        <input type="url" id="d-website" placeholder="https://yourstudio.ro">
-      </div>
-      <div class="field">
-        <label for="d-category">Primary category <span class="required-star">*</span></label>
-        <select id="d-category" required>
-          <option value="">Select a category...</option>
-          <option value="Fashion">Fashion</option>
-          <option value="Jewelry &amp; Small Objects">Jewelry &amp; Small Objects</option>
-          <option value="Shoes &amp; Accessories">Shoes &amp; Accessories</option>
-          <option value="Furniture &amp; Homeware">Furniture &amp; Homeware</option>
-          <option value="Art &amp; Print">Art &amp; Print</option>
-          <option value="Ceramics &amp; Craft">Ceramics &amp; Craft</option>
-        </select>
-      </div>
-      <div class="field">
-        <label for="d-city">Based in</label>
-        <input type="text" id="d-city" placeholder="e.g. Cluj-Napoca, Romania">
-      </div>
-      <div class="field span2">
-        <label for="d-bio">Designer bio <span class="required-star">*</span></label>
-        <textarea class="bio" id="d-bio" placeholder="Tell us about yourself and your work — your background, what drives you, how you make things. This will appear on your Ce Fain! profile page." oninput="updateBioCount()" required></textarea>
-        <div class="char-count" id="bio-count">0 / 500 characters recommended</div>
+    <div class="section">
+      <div class="section-title">About you</div>
+      <div class="grid-2">
+        <div class="field" id="field-d-name">
+          <label for="d-name">Designer / brand name <span class="required-star">*</span></label>
+          <input type="text" id="d-name" placeholder="e.g. Wagner Arte">
+          <span class="error-msg">Please enter your brand name</span>
+        </div>
+        <div class="field" id="field-d-email">
+          <label for="d-email">Contact email <span class="required-star">*</span></label>
+          <input type="email" id="d-email" placeholder="you@studio.ro">
+          <span class="error-msg">Please enter a valid email</span>
+        </div>
+        <div class="field">
+          <label for="d-instagram">Instagram handle</label>
+          <input type="text" id="d-instagram" placeholder="@yourstudio">
+        </div>
+        <div class="field">
+          <label for="d-website">Website</label>
+          <input type="url" id="d-website" placeholder="https://yourstudio.ro">
+        </div>
+        <div class="field" id="field-d-category">
+          <label for="d-category">Primary category <span class="required-star">*</span></label>
+          <select id="d-category">
+            <option value="">Select a category...</option>
+            <option value="Fashion">Fashion</option>
+            <option value="Jewelry &amp; Small Objects">Jewelry &amp; Small Objects</option>
+            <option value="Shoes &amp; Accessories">Shoes &amp; Accessories</option>
+            <option value="Furniture &amp; Homeware">Furniture &amp; Homeware</option>
+            <option value="Art &amp; Print">Art &amp; Print</option>
+            <option value="Ceramics &amp; Craft">Ceramics &amp; Craft</option>
+          </select>
+          <span class="error-msg">Please select a category</span>
+        </div>
+        <div class="field">
+          <label for="d-city">Based in</label>
+          <input type="text" id="d-city" placeholder="e.g. Cluj-Napoca, Romania">
+        </div>
+        <div class="field span2" id="field-d-bio">
+          <label for="d-bio">Designer bio <span class="required-star">*</span></label>
+          <textarea class="bio" id="d-bio" placeholder="Tell us about yourself and your work — your background, what drives you, how you make things. This will appear on your Ce Fain! profile page." oninput="updateBioCount()"></textarea>
+          <div class="char-count" id="bio-count">0 / 500 characters recommended</div>
+          <span class="error-msg">Please write a short bio</span>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="drive-section">
-    <div class="section-title">Product photos — Google Drive</div>
-    <p class="hint">Paste the Google Drive folder link provided by Ce Fain!. Once applied, an "Open folder" button will appear on each product card so you can upload photos as you go.</p>
-    <div class="drive-input-row">
-      <input type="url" id="drive-global" placeholder="https://drive.google.com/drive/folders/...">
-      <button class="btn-apply" onclick="applyDriveLink()">Apply link</button>
+    <div class="drive-section">
+      <div class="section-title">Product photos — Google Drive</div>
+      <p class="hint">Paste the Google Drive folder link provided by Ce Fain!. An "Open folder" button will appear on each product card so you can upload photos as you go.</p>
+      <div class="drive-input-row">
+        <input type="url" id="drive-global" placeholder="https://drive.google.com/drive/folders/...">
+        <button class="btn-apply" onclick="applyDriveLink()">Apply link</button>
+      </div>
+    </div>
+
+    <div class="products-heading">
+      <h2>Your products</h2>
+      <span class="product-summary" id="product-summary">0 products added</span>
+    </div>
+
+    <div class="product-list" id="product-list"></div>
+
+    <div class="bottom-bar">
+      <button class="btn-add-product" onclick="addProduct()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        Add product
+      </button>
+      <div class="spacer"></div>
+      <button class="btn-submit" id="submit-btn" onclick="submitForm()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Submit
+      </button>
     </div>
   </div>
-
-  <div class="products-heading">
-    <h2>Your products</h2>
-    <span class="product-summary" id="product-summary">0 products added</span>
-  </div>
-
-  <div class="product-list" id="product-list"></div>
-
-  <div class="bottom-bar">
-    <button class="btn-add-product" onclick="addProduct()">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-      Add product
-    </button>
-    <div class="spacer"></div>
-    <button class="btn-download" onclick="exportCSV()">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-      Download CSV
-    </button>
-  </div>
-
 </div>
 
-<div class="toast" id="toast">CSV downloaded — email it to howcool@cefain.com</div>
+<!-- SUCCESS VIEW -->
+<div class="success-screen" id="success-view">
+  <div class="success-icon">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+  </div>
+  <h2>You're all done!</h2>
+  <p>Your products have been submitted to Ce Fain!. We'll review everything and be in touch soon at <span id="confirm-email"></span>.</p>
+</div>
 
 <script>
+  // -------------------------------------------------------
+  // CONFIGURATION — replace with your Apps Script URL after deploying
+  // -------------------------------------------------------
+  const APPS_SCRIPT_URL = 'YOUR_APPS_SCRIPT_URL_HERE';
+  // -------------------------------------------------------
+
   let productCount = 0;
 
   function addProduct() {
@@ -546,55 +230,56 @@
     const card = document.createElement('div');
     card.className = 'product-card';
     card.id = 'prod-' + id;
-
     card.innerHTML = `
       <div class="product-card-header">
         <span class="product-label">Product ${id}</span>
         <button class="btn-remove" onclick="removeProduct(${id})">Remove</button>
       </div>
       <div class="product-body">
-        <div class="field">
+        <div class="field" id="field-t-${id}">
           <label for="t-${id}">Product title <span class="required-star">*</span></label>
-          <input type="text" id="t-${id}" placeholder="e.g. Gold Leaf Pendant" required>
+          <input type="text" id="t-${id}" placeholder="e.g. Gold Leaf Pendant">
+          <span class="error-msg">Please enter a product title</span>
         </div>
         <div class="grid-2">
           <div class="field">
             <label for="v-${id}">Variant / type</label>
             <input type="text" id="v-${id}" placeholder="e.g. Silver / Size S / One size">
-            <span class="hint">Leave blank if there are no variants</span>
+            <span class="hint">Leave blank if no variants</span>
           </div>
           <div class="field">
             <label for="sku-${id}">Your product code (SKU)</label>
             <input type="text" id="sku-${id}" placeholder="e.g. WA-GP-001">
           </div>
         </div>
-        <div class="field">
+        <div class="field" id="field-desc-${id}">
           <label for="desc-${id}">Product description <span class="required-star">*</span></label>
-          <textarea class="desc" id="desc-${id}" placeholder="Describe the product — materials used, how it's made, dimensions, care instructions..." oninput="updateCharCount(${id})" required></textarea>
+          <textarea class="desc" id="desc-${id}" placeholder="Materials, process, dimensions, care instructions..." oninput="updateCharCount(${id})"></textarea>
           <div class="char-count" id="cc-${id}">0 characters</div>
+          <span class="error-msg">Please add a description</span>
         </div>
         <div class="grid-2">
-          <div class="field">
+          <div class="field" id="field-price-${id}">
             <label for="price-${id}">List price (USD) <span class="required-star">*</span></label>
             <div class="price-wrap">
               <span class="currency">$</span>
-              <input type="number" id="price-${id}" placeholder="0.00" min="0" step="0.01" required>
+              <input type="number" id="price-${id}" placeholder="0.00" min="0" step="0.01">
             </div>
-            <span class="hint">This is the price customers see on Ce Fain!</span>
+            <span class="error-msg">Please enter a price</span>
           </div>
           <div class="field">
-            <label for="stock-${id}">Quantity in stock</label>
+            <label for="stock-${id}">Qty in stock</label>
             <input type="number" id="stock-${id}" placeholder="1" min="0" step="1">
           </div>
         </div>
         <div class="grid-2">
           <div class="field">
             <label for="mat-${id}">Materials</label>
-            <input type="text" id="mat-${id}" placeholder="e.g. 14k gold, sterling silver">
+            <input type="text" id="mat-${id}" placeholder="e.g. 14k gold, leather">
           </div>
           <div class="field">
             <label for="origin-${id}">Made in</label>
-            <input type="text" id="origin-${id}" value="Romania" placeholder="Romania">
+            <input type="text" id="origin-${id}" value="Romania">
           </div>
         </div>
         <div class="field">
@@ -604,11 +289,10 @@
         <div class="field">
           <label>Product photos</label>
           <div id="drive-box-${id}">${buildDriveBox(driveUrl)}</div>
-          <p class="photo-hint">Upload all photos for this product into the Drive folder. Name files starting with the product title — e.g. <code>gold-leaf-pendant-1.jpg</code>, <code>gold-leaf-pendant-2.jpg</code></p>
+          <p class="photo-hint">Name files starting with the product title — e.g. <code>gold-leaf-pendant-1.jpg</code></p>
         </div>
       </div>
     `;
-
     list.appendChild(card);
     updateSummary();
     card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -617,28 +301,25 @@
   function buildDriveBox(url) {
     if (url) {
       return `<div class="drive-link-box">
-        <svg class="drive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
         <span>Upload photos to your shared Drive folder</span>
-        <a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">Open folder ↗</a>
+        <a href="${escHtml(url)}" target="_blank" rel="noopener noreferrer">Open folder ↗</a>
       </div>`;
     }
     return `<div class="drive-empty-box">Paste your Drive folder link above to enable photo uploads</div>`;
   }
 
-  function escapeHtml(str) {
-    return str.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  function escHtml(s) {
+    return s.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
   }
 
   function applyDriveLink() {
     const url = document.getElementById('drive-global').value.trim();
-    document.querySelectorAll('[id^="drive-box-"]').forEach(box => {
-      box.innerHTML = buildDriveBox(url);
-    });
+    document.querySelectorAll('[id^="drive-box-"]').forEach(b => { b.innerHTML = buildDriveBox(url); });
   }
 
   function removeProduct(id) {
-    const card = document.getElementById('prod-' + id);
-    if (card) { card.remove(); updateSummary(); }
+    const el = document.getElementById('prod-' + id);
+    if (el) { el.remove(); updateSummary(); }
   }
 
   function updateCharCount(id) {
@@ -654,103 +335,111 @@
   }
 
   function updateSummary() {
-    const cards = document.querySelectorAll('.product-card');
-    const n = cards.length;
+    const n = document.querySelectorAll('.product-card').length;
     document.getElementById('product-summary').textContent = n + ' product' + (n !== 1 ? 's' : '') + ' added';
   }
 
-  function v(id) {
-    const el = document.getElementById(id);
-    return el ? el.value.trim() : '';
+  function v(id) { const el = document.getElementById(id); return el ? el.value.trim() : ''; }
+
+  function setError(fieldId, show) {
+    const el = document.getElementById('field-' + fieldId);
+    if (!el) return;
+    el.classList.toggle('has-error', show);
   }
 
-  function exportCSV() {
+  function validate() {
+    let ok = true;
+    const required = ['d-name', 'd-email', 'd-category', 'd-bio'];
+    required.forEach(id => {
+      const val = v(id);
+      const invalid = !val || (id === 'd-email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val));
+      setError(id, invalid);
+      if (invalid) ok = false;
+    });
     const cards = document.querySelectorAll('.product-card');
-    if (!cards.length) { alert('Please add at least one product before downloading.'); return; }
-
-    const dName = v('d-name');
-    const dEmail = v('d-email');
-    if (!dName || !dEmail) { alert('Please fill in your designer name and email before downloading.'); return; }
-
-    const dIG = v('d-instagram');
-    const dWeb = v('d-website');
-    const dCat = v('d-category');
-    const dCity = v('d-city');
-    const dBio = v('d-bio');
-    const driveUrl = v('drive-global');
-
-    const headers = [
-      'Handle', 'Title', 'Body (HTML)', 'Vendor', 'Product Category', 'Type', 'Tags', 'Published',
-      'Option1 Name', 'Option1 Value',
-      'Variant SKU', 'Variant Price', 'Variant Inventory Qty',
-      'Metafield: custom.materials [single_line_text_field]',
-      'Metafield: custom.country_of_origin [single_line_text_field]',
-      'Metafield: custom.designer_bio [multi_line_text_field]',
-      'Metafield: custom.designer_instagram [single_line_text_field]',
-      'Metafield: custom.designer_website [url]',
-      'Metafield: custom.designer_city [single_line_text_field]',
-      'Metafield: custom.photo_drive_folder [url]',
-      'Designer Name', 'Designer Email'
-    ];
-
-    const rows = [headers];
-
+    if (!cards.length) { alert('Please add at least one product.'); return false; }
     cards.forEach(card => {
+      const m = card.id.match(/prod-(\d+)/);
+      if (!m) return;
+      const id = m[1];
+      ['t-' + id, 'desc-' + id, 'price-' + id].forEach(fid => {
+        const invalid = !v(fid);
+        setError(fid, invalid);
+        if (invalid) ok = false;
+      });
+    });
+    if (!ok) {
+      document.querySelector('.has-error')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    return ok;
+  }
+
+  function buildRows() {
+    const designer = {
+      name: v('d-name'), email: v('d-email'), instagram: v('d-instagram'),
+      website: v('d-website'), category: v('d-category'), city: v('d-city'),
+      bio: v('d-bio'), driveFolder: v('drive-global')
+    };
+    const rows = [];
+    document.querySelectorAll('.product-card').forEach(card => {
       const m = card.id.match(/prod-(\d+)/);
       if (!m) return;
       const id = m[1];
       const title = v('t-' + id);
       if (!title) return;
-
-      const handle = title.toLowerCase()
-        .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-        .replace(/[^a-z0-9]+/g, '-')
-        .replace(/^-|-$/g, '');
-
-      const desc = v('desc-' + id);
-      const bodyHtml = desc ? '<p>' + desc.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>') + '</p>' : '';
-      const variant = v('v-' + id) || 'Default Title';
-      const optName = variant !== 'Default Title' ? 'Style' : '';
-
-      rows.push([
-        handle, title, bodyHtml,
-        dName, dCat, dCat,
-        v('tags-' + id), 'TRUE',
-        optName, variant,
-        v('sku-' + id),
-        v('price-' + id),
-        v('stock-' + id) || '1',
-        v('mat-' + id),
-        v('origin-' + id) || 'Romania',
-        dBio, dIG, dWeb, dCity, driveUrl,
-        dName, dEmail
-      ]);
+      rows.push({
+        designerName: designer.name,
+        designerEmail: designer.email,
+        designerInstagram: designer.instagram,
+        designerWebsite: designer.website,
+        category: designer.category,
+        designerCity: designer.city,
+        designerBio: designer.bio,
+        driveFolder: designer.driveFolder,
+        productTitle: title,
+        variant: v('v-' + id),
+        sku: v('sku-' + id),
+        description: v('desc-' + id),
+        price: v('price-' + id),
+        stock: v('stock-' + id) || '1',
+        materials: v('mat-' + id),
+        madeIn: v('origin-' + id) || 'Romania',
+        tags: v('tags-' + id),
+        submittedAt: new Date().toISOString()
+      });
     });
+    return rows;
+  }
 
-    const csv = rows.map(row =>
-      row.map(cell => {
-        const s = String(cell == null ? '' : cell);
-        return (s.includes(',') || s.includes('"') || s.includes('\n') || s.includes('\r'))
-          ? '"' + s.replace(/"/g, '""') + '"'
-          : s;
-      }).join(',')
-    ).join('\r\n');
+  async function submitForm() {
+    if (!validate()) return;
 
-    const bom = '\uFEFF';
-    const blob = new Blob([bom + csv], { type: 'text/csv;charset=utf-8;' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    const slug = dName ? dName.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '') : 'designer';
-    a.download = 'cefain-intake-' + slug + '-' + new Date().toISOString().slice(0, 10) + '.csv';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
+    const btn = document.getElementById('submit-btn');
+    btn.disabled = true;
+    btn.innerHTML = '<span class="spinner"></span> Submitting...';
 
-    const toast = document.getElementById('toast');
-    toast.classList.add('show');
-    setTimeout(() => toast.classList.remove('show'), 4000);
+    const rows = buildRows();
+
+    try {
+      await fetch(APPS_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ rows })
+      });
+      showSuccess();
+    } catch (err) {
+      btn.disabled = false;
+      btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Submit';
+      alert('Something went wrong. Please try again or email howcool@cefain.com directly.');
+    }
+  }
+
+  function showSuccess() {
+    document.getElementById('confirm-email').textContent = v('d-email');
+    document.getElementById('form-view').style.display = 'none';
+    document.getElementById('success-view').classList.add('visible');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   addProduct();
